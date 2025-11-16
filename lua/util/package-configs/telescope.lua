@@ -18,7 +18,7 @@ function M.Config()
 				prompt_position = "top",
 			},
 			history = {
-				path = "/Users/kernel/.nvim-utils/telescope/telescope-history",
+				path = os.getenv("HOME") .. "/.nvim-utils/telescope/telescope-history",
 			},
 			path_display = {
 				"tail",

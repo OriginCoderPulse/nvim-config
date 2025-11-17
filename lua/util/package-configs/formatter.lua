@@ -32,6 +32,7 @@ function M.Config()
 			cpp = { require("formatter.filetypes.cpp").clangformat },
 			cs = { require("formatter.filetypes.cs").clangformat },
 			rust = { require("formatter.filetypes.rust").rustfmt },
+			go = { require("formatter.filetypes.go").gofumpt },
 		},
 	})
 end

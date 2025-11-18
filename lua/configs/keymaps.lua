@@ -176,14 +176,6 @@ function M.Config()
 			enabled = true,
 			desc = "Toggle chat",
 		},
-		{
-			mode = "v",
-			key = "ca",
-			leader = true,
-			map = ":'<,'>CodeCompanionActions<CR>",
-			enabled = true,
-			desc = "Code actions (visual)",
-		},
 
 		-- Hop navigation
 		{
@@ -275,22 +267,10 @@ function M.Config()
 			desc = "Rename symbol",
 		},
 		{
-			mode = "n",
-			key = "ca",
-			leader = true,
-			map = function()
-				vim.lsp.buf.code_action()
-			end,
-			enabled = true,
-			desc = "Code actions",
-		},
-		{
 			mode = "v",
 			key = "ca",
 			leader = true,
-			map = function()
-				vim.lsp.buf.code_action()
-			end,
+			map = ":'<,'>CodeCompanionActions<CR>",
 			enabled = true,
 			desc = "Code actions (visual)",
 		},

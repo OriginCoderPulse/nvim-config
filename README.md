@@ -234,6 +234,7 @@ echo 'export DEEPSEEK_API_KEY="your-api-key"' >> ~/.zshrc
 | **Java**       | jdtls      | `lsp/jdtls.lua`  | ✅   |
 | **C/C++**      | clangd     | `lsp/clangd.lua` | ✅   |
 | **HTML**       | html       | `lsp/html.lua`   | ✅   |
+| **Go**         | Go         | `lsp/gopls.lua`  | ✅   |
 | **CSS**        | cssls      | `lsp/cssls.lua`  | ✅   |
 | **JSON**       | jsonls     | `lsp/jsonls.lua` | ✅   |
 | **Bash**       | bashls     | `lsp/bashls.lua` | ✅   |

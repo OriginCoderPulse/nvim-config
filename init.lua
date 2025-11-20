@@ -24,6 +24,7 @@ local config_modules = {
 	{ name = "util.package-configs.snacks", enabled = true },
 	{ name = "util.package-configs.code-companion", enabled = true, lazy = true },
 	{ name = "util.package-configs.hop", enabled = true, lazy = true },
+	{ name = "util.package-configs.gsigns", enabled = true, lazy = true },
 }
 
 -- 安全加载模块的函数

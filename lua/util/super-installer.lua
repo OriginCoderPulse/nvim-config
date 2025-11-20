@@ -104,6 +104,9 @@ function M.Config()
 
 				-- hop
 				"hadronized/hop.nvim",
+
+				-- gitlens
+				"lewis6991/gitsigns.nvim",
 			},
 		},
 	})

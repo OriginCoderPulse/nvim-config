@@ -51,7 +51,7 @@ function M.Config()
 						vim.log.levels.INFO,
 						{ id = "deepseek_chat", title = "DeepSeek", icon = "󱢴" }
 					)
-			elseif chat.match == "CodeCompanionChatClosed" then
+				elseif chat.match == "CodeCompanionChatClosed" then
 					vim.notify(
 						"Tranks For Using DeepSeek Chat",
 						vim.log.levels.INFO,
@@ -90,7 +90,8 @@ function M.Config()
 						end,
 					})
 				elseif
-					request.match == "CodeCompanionRequestStreaming" or request.name == "CodeCompanionInlineFinished"
+					request.match == "CodeCompanionRequestStreaming"
+					or request.name == "CodeCompanionInlineFinished"
 				then
 					vim.notify("Server Request Success", vim.log.levels.INFO, {
 						id = "deepseek_progress",

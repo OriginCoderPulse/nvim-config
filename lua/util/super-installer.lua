@@ -107,6 +107,10 @@ function M.Config()
 
 				-- gitlens
 				"lewis6991/gitsigns.nvim",
+
+				-- mini
+				"nvim-mini/mini.icons",
+				"nvim-mini/mini.files",
 			},
 		},
 	})

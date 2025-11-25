@@ -18,7 +18,7 @@ function M.Config()
 			mode = "n",
 			key = "e",
 			leader = true,
-			map = ":NvimTreeToggle<CR>",
+			map = ":lua MiniFiles.open()<CR>",
 			enabled = true,
 			desc = "Toggle file explorer",
 		},

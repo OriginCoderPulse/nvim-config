@@ -5,7 +5,7 @@ local config_modules = {
 	{ name = "configs.commands", enabled = true },
 
 	-- 插件配置
-	{ name = "util.super-installer", enabled = true },
+	{ name = "util.pkg-manager", enabled = true, lazy = true },
 	{ name = "util.package-configs.tree-sitter", enabled = true, lazy = true },
 	{ name = "util.package-configs.transparent", enabled = true, lazy = true },
 	{ name = "util.package-configs.telescope", enabled = true },
@@ -20,11 +20,11 @@ local config_modules = {
 	{ name = "util.lsp-configs.snips.snips", enabled = true, lazy = true },
 	{ name = "util.package-configs.render-markdown", enabled = true, lazy = true },
 	{ name = "util.package-configs.snacks", enabled = true },
-	{ name = "util.package-configs.code-companion", enabled = true, lazy = true },
 	{ name = "util.package-configs.hop", enabled = true, lazy = true },
 	{ name = "util.package-configs.gsigns", enabled = true, lazy = true },
 	{ name = "util.package-configs.mini-icon", enabled = true },
 	{ name = "util.package-configs.mini-file", enabled = true },
+	{ name = "util.package-configs.llm", enabled = true },
 }
 
 -- 安全加载模块的函数

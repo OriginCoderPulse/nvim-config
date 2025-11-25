@@ -167,14 +167,22 @@ function M.Config()
 			desc = "Open Mason",
 		},
 
-		-- Code companion
+		-- LLMSession
 		{
 			mode = "n",
 			key = "cc",
 			leader = true,
-			map = ":CodeCompanionChat Toggle<CR>",
+			map = ":LLMSessionToggle<CR>",
 			enabled = true,
 			desc = "Toggle chat",
+		},
+		{
+			mode = "v",
+			key = "ca",
+			leader = true,
+			map = ":'<,'>LLMSelectedTextHandle '请解释说明一下这段'<CR>",
+			enabled = true,
+			desc = "Explain Chat",
 		},
 
 		-- Hop navigation
@@ -265,14 +273,6 @@ function M.Config()
 			end,
 			enabled = true,
 			desc = "Rename symbol",
-		},
-		{
-			mode = "v",
-			key = "ca",
-			leader = true,
-			map = ":'<,'>CodeCompanionActions<CR>",
-			enabled = true,
-			desc = "Code actions (visual)",
 		},
 		{
 			mode = "n",

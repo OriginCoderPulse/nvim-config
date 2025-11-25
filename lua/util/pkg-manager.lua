@@ -93,7 +93,7 @@ function M.Config()
 				"folke/noice.nvim",
 
 				-- ai
-				"olimorris/codecompanion.nvim",
+				"Kurama622/llm.nvim",
 
 				-- markdown
 				"MeanderingProgrammer/render-markdown.nvim",

@@ -54,7 +54,7 @@ function M.Config()
 			leader = true,
 			map = ":Telescope treesitter_info<CR>",
 			enabled = true,
-			desc = "Live grep",
+			desc = "Treesitter info",
 		},
 		{
 			mode = "n",
@@ -62,7 +62,7 @@ function M.Config()
 			leader = true,
 			map = ":Telescope node_packages<CR>",
 			enabled = true,
-			desc = "Live grep",
+			desc = "Node packages",
 		},
 		{
 			mode = "n",
@@ -70,7 +70,7 @@ function M.Config()
 			leader = true,
 			map = ":Telescope notify<CR>",
 			enabled = true,
-			desc = "Live grep",
+			desc = "Notifications",
 		},
 		{
 			mode = "n",
@@ -78,138 +78,16 @@ function M.Config()
 			leader = true,
 			map = ":Telescope current_buffer_fuzzy_find<CR>",
 			enabled = true,
-			desc = "Live grep",
+			desc = "Current buffer fuzzy find",
 		},
 
-		-- LSP related
-		{
-			mode = "n",
-			key = "gd",
-			leader = false,
-			map = function() end,
-			enabled = true,
-			desc = "Go to definition",
-		},
-		{
-			mode = "n",
-			key = "gr",
-			leader = false,
-			map = function()
-				require("telescope.builtin").lsp_references()
-			end,
-			enabled = true,
-			desc = "Find references",
-		},
-		{
-			mode = "n",
-			key = "gi",
-			leader = false,
-			map = function()
-				require("telescope.builtin").lsp_type_definitions()
-			end,
-			enabled = true,
-			desc = "Go to type definition",
-		},
-		{
-			mode = "n",
-			key = "gh",
-			leader = true,
-			map = function()
-				vim.lsp.buf.hover({
-					title = "Describe",
-					title_pos = "center",
-				})
-			end,
-			enabled = true,
-			desc = "Show diagnostic",
-		},
-		{
-			mode = "n",
-			key = "rn",
-			leader = true,
-			map = "<cmd>lua vim.lsp.buf.rename()<CR>",
-			enabled = true,
-			desc = "Rename symbol",
-		},
-		{
-			mode = "n",
-			key = "ld",
-			leader = true,
-			map = function()
-				vim.diagnostic.open_float({ source = true, border = "rounded" })
-			end,
-			enabled = true,
-			desc = "Show diagnostic",
-		},
-
-		-- Language specific
-		{ mode = "n", key = "lg", leader = true, map = ":lua _Git()<CR>", enabled = true, desc = "Git commands" },
-		{ mode = "n", key = "lu", leader = true, map = ":lua _Lua()<CR>", enabled = true, desc = "Lua commands" },
-		{ mode = "n", key = "nd", leader = true, map = ":lua _Node()<CR>", enabled = true, desc = "Node commands" },
-		{ mode = "n", key = "py", leader = true, map = ":lua _Python()<CR>", enabled = true, desc = "Python commands" },
-		{ mode = "n", key = "sq", leader = true, map = ":lua _Sql()<CR>", enabled = true, desc = "SQL commands" },
-
-		-- UI toggles
-		{
-			mode = "n",
-			key = "nh",
-			leader = true,
-			map = ":set nohlsearch<CR>",
-			enabled = true,
-			desc = "Clear search highlight",
-		},
-		{
-			mode = "n",
-			key = "ms",
-			leader = true,
-			map = ":Mason<CR>",
-			enabled = true,
-			desc = "Open Mason",
-		},
-
-		-- LLMSession
-		{
-			mode = "n",
-			key = "cc",
-			leader = true,
-			map = ":LLMSessionToggle<CR>",
-			enabled = true,
-			desc = "Toggle chat",
-		},
-		{
-			mode = "v",
-			key = "ca",
-			leader = true,
-			map = ":'<,'>LLMSelectedTextHandle '请解释说明一下这段'<CR>",
-			enabled = true,
-			desc = "Explain Chat",
-		},
-
-		-- Hop navigation
-		{
-			mode = "n",
-			key = "hw",
-			leader = true,
-			map = ":HopWord<CR>",
-			enabled = true,
-			desc = "Hop to word",
-		},
-		{
-			mode = "n",
-			key = "hl",
-			leader = true,
-			map = ":HopLine<CR>",
-			enabled = true,
-			desc = "Hop to line",
-		},
-
-		-- LSP navigation
+		-- LSP navigation (jump to definitions, references, etc.)
 		{
 			mode = "n",
 			key = "gd",
 			leader = false,
 			map = function()
-				vim.lsp.buf.definition()
+				require("telescope.builtin").lsp_definitions()
 			end,
 			enabled = true,
 			desc = "Go to definition",
@@ -229,29 +107,33 @@ function M.Config()
 			key = "gi",
 			leader = false,
 			map = function()
-				vim.lsp.buf.implementation()
+				require("telescope.builtin").lsp_implementations()
 			end,
 			enabled = true,
 			desc = "Go to implementation",
 		},
 		{
 			mode = "n",
-			key = "gt",
-			leader = false,
-			map = function() end,
-			enabled = true,
-			desc = "Go to type definition",
-		},
-		{
-			mode = "n",
 			key = "gr",
 			leader = false,
 			map = function()
-				vim.lsp.buf.references()
+				require("telescope.builtin").lsp_references()
 			end,
 			enabled = true,
-			desc = "Show references",
+			desc = "Find references",
 		},
+		{
+			mode = "n",
+			key = "gt",
+			leader = false,
+			map = function()
+				require("telescope.builtin").lsp_type_definitions()
+			end,
+			enabled = true,
+			desc = "Go to type definition",
+		},
+
+		-- LSP actions (hover, rename, etc.)
 		{
 			mode = "n",
 			key = "K",
@@ -262,8 +144,19 @@ function M.Config()
 			enabled = true,
 			desc = "Show hover",
 		},
-
-		-- LSP actions
+		{
+			mode = "n",
+			key = "gh",
+			leader = true,
+			map = function()
+				vim.lsp.buf.hover({
+					title = "Describe",
+					title_pos = "center",
+				})
+			end,
+			enabled = true,
+			desc = "Show hover (centered)",
+		},
 		{
 			mode = "n",
 			key = "rn",
@@ -276,13 +169,13 @@ function M.Config()
 		},
 		{
 			mode = "n",
-			key = "f",
+			key = "th",
 			leader = true,
 			map = function()
-				vim.lsp.buf.format()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			end,
 			enabled = true,
-			desc = "Format code",
+			desc = "Toggle inlay hint",
 		},
 
 		-- LSP diagnostics
@@ -314,7 +207,7 @@ function M.Config()
 			key = "lp",
 			leader = true,
 			map = function()
-				vim.diagnostic.get_prev()
+				vim.diagnostic.get_next()
 			end,
 			enabled = true,
 			desc = "Previous diagnostic",
@@ -330,23 +223,42 @@ function M.Config()
 			desc = "Diagnostic quickfix",
 		},
 
-		-- Escape mappings
+		-- Language specific commands
+		{ mode = "n", key = "lg", leader = true, map = ":lua _Git()<CR>", enabled = true, desc = "Git commands" },
+		{ mode = "n", key = "lu", leader = true, map = ":lua _Lua()<CR>", enabled = true, desc = "Lua commands" },
+		{ mode = "n", key = "nd", leader = true, map = ":lua _Node()<CR>", enabled = true, desc = "Node commands" },
+		{ mode = "n", key = "py", leader = true, map = ":lua _Python()<CR>", enabled = true, desc = "Python commands" },
+		{ mode = "n", key = "sq", leader = true, map = ":lua _Sql()<CR>", enabled = true, desc = "SQL commands" },
+
+		-- UI toggles
 		{
-			mode = "i",
-			key = "jk",
-			leader = false,
-			map = "<ESC>",
+			mode = "n",
+			key = "nh",
+			leader = true,
+			map = ":set nohlsearch<CR>",
 			enabled = true,
-			desc = "Escape insert mode",
+			desc = "Clear search highlight",
 		},
+		{ mode = "n", key = "ms", leader = true, map = ":Mason<CR>", enabled = true, desc = "Open Mason" },
+
+		-- LLM session
+		{ mode = "n", key = "cc", leader = true, map = ":LLMSessionToggle<CR>", enabled = true, desc = "Toggle chat" },
 		{
 			mode = "v",
-			key = "v",
-			leader = false,
-			map = "<ESC>",
+			key = "ca",
+			leader = true,
+			map = ":'<,'>LLMSelectedTextHandle '请解释说明一下这段'<CR>",
 			enabled = true,
-			desc = "Escape visual mode",
+			desc = "Explain selected text",
 		},
+
+		-- Hop navigation
+		{ mode = "n", key = "hw", leader = true, map = ":HopWord<CR>", enabled = true, desc = "Hop to word" },
+		{ mode = "n", key = "hl", leader = true, map = ":HopLine<CR>", enabled = true, desc = "Hop to line" },
+
+		-- Escape mappings
+		{ mode = "i", key = "jk", leader = false, map = "<ESC>", enabled = true, desc = "Escape insert mode" },
+		{ mode = "v", key = "v", leader = false, map = "<ESC>", enabled = true, desc = "Escape visual mode" },
 	}
 
 	for _, map in ipairs(mapConfig) do

@@ -154,7 +154,7 @@ function M.Config()
 			["routes"] = { glyph = "󰑪", hl = "MiniIconsOrange" },
 			["routers"] = { glyph = "󰑩", hl = "MiniIconsOrange" },
 			["store"] = { glyph = "󱣇", hl = "MiniIconsPurple" },
-			["hooks"] = { glyph = "󰛢", hl = "MiniIconsAzure" },
+			["hooks"] = { glyph = "󱧬", hl = "MiniIconsAzure" },
 			["utils"] = { glyph = "󰟻", hl = "MiniIconsOrange" },
 			["helpers"] = { glyph = "", hl = "MiniIconsOrange" },
 			["config"] = { glyph = "", hl = "MiniIconsPurple" },
@@ -192,6 +192,7 @@ function M.Config()
 			["decorators"] = { glyph = "󰆪", hl = "MiniIconsPurple" },
 			["containers"] = { glyph = "󰆫", hl = "MiniIconsAzure" },
 			["webpack"] = { glyph = "", hl = "MiniIconsOrange" },
+			["logs"] = { glyph = "󱂅", hl = "MiniIconsGreen" },
 		},
 		os = {
 			unix = { glyph = "󰌽", hl = "MiniIconsAzure" },

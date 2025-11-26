@@ -1,10 +1,7 @@
 local config_modules = {
-	-- 基础配置
 	{ name = "configs.custom", enabled = true },
 	{ name = "configs.keymaps", enabled = true },
 	{ name = "configs.commands", enabled = true },
-
-	-- 插件配置
 	{ name = "util.pkg-manager", enabled = true },
 	{ name = "util.package-configs.tree-sitter", enabled = true },
 	{ name = "util.package-configs.transparent", enabled = true },
@@ -27,7 +24,6 @@ local config_modules = {
 	{ name = "util.package-configs.llm", enabled = true },
 }
 
--- 安全加载模块的函数
 local function safe_require(module_name)
 	local ok, result = pcall(require, module_name)
 	if not ok then
@@ -37,7 +33,6 @@ local function safe_require(module_name)
 	return result
 end
 
--- 加载配置模块
 local function load_config()
 	for _, module in ipairs(config_modules) do
 		if module.enabled then
@@ -49,5 +44,4 @@ local function load_config()
 	end
 end
 
--- 执行配置加载
 load_config()

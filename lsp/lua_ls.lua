@@ -3,7 +3,13 @@ return {
 		"lua",
 	},
 	on_init = function(client)
-		local path = client.workspace_folders[1].name
+		local path = nil
+		if client.workspace_folders and client.workspace_folders[1] then
+			path = client.workspace_folders[1].name
+		else
+			path = vim.fn.getcwd()
+		end
+
 		for _, filename in ipairs({ "/.luarc.json", "/.luarc.jsonc" }) do
 			if vim.uv.fs_stat(path .. filename) then
 				return

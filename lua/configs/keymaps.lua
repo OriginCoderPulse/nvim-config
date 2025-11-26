@@ -66,14 +66,6 @@ function M.Config()
 		},
 		{
 			mode = "n",
-			key = "fm",
-			leader = true,
-			map = ":Telescope notify<CR>",
-			enabled = true,
-			desc = "Notifications",
-		},
-		{
-			mode = "n",
 			key = "fc",
 			leader = true,
 			map = ":Telescope current_buffer_fuzzy_find<CR>",
@@ -94,26 +86,6 @@ function M.Config()
 		},
 		{
 			mode = "n",
-			key = "gD",
-			leader = false,
-			map = function()
-				vim.lsp.buf.declaration()
-			end,
-			enabled = true,
-			desc = "Go to declaration",
-		},
-		{
-			mode = "n",
-			key = "gi",
-			leader = false,
-			map = function()
-				require("telescope.builtin").lsp_implementations()
-			end,
-			enabled = true,
-			desc = "Go to implementation",
-		},
-		{
-			mode = "n",
 			key = "gr",
 			leader = false,
 			map = function()
@@ -121,16 +93,6 @@ function M.Config()
 			end,
 			enabled = true,
 			desc = "Find references",
-		},
-		{
-			mode = "n",
-			key = "gt",
-			leader = false,
-			map = function()
-				require("telescope.builtin").lsp_type_definitions()
-			end,
-			enabled = true,
-			desc = "Go to type definition",
 		},
 
 		-- LSP actions (hover, rename, etc.)
@@ -191,36 +153,6 @@ function M.Config()
 			end,
 			enabled = true,
 			desc = "Show diagnostic",
-		},
-		{
-			mode = "n",
-			key = "ln",
-			leader = true,
-			map = function()
-				vim.diagnostic.get_next()
-			end,
-			enabled = true,
-			desc = "Next diagnostic",
-		},
-		{
-			mode = "n",
-			key = "lp",
-			leader = true,
-			map = function()
-				vim.diagnostic.get_next()
-			end,
-			enabled = true,
-			desc = "Previous diagnostic",
-		},
-		{
-			mode = "n",
-			key = "lq",
-			leader = true,
-			map = function()
-				vim.diagnostic.setqflist()
-			end,
-			enabled = true,
-			desc = "Diagnostic quickfix",
 		},
 
 		-- Language specific commands

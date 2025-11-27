@@ -44,16 +44,7 @@ return {
 						},
 					},
 				},
-				lualine_c = {
-					{
-						symbols = {
-							modified = "󰬋",
-							readonly = "󰬞",
-							unnamed = "󰅰",
-							newfile = "󰎔",
-						},
-					},
-				},
+				lualine_c = {},
 				lualine_x = {
 					{
 						"diagnostics",

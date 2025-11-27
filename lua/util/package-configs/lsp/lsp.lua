@@ -164,6 +164,7 @@ return {
 				"clangd",
 				"jsonls",
 				"emmet_ls",
+				"dcmls",
 			}
 
 			vim.lsp.enable(servers)

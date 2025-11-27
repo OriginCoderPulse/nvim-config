@@ -30,6 +30,7 @@ return {
 				cs = { require("formatter.filetypes.cs").clangformat },
 				rust = { require("formatter.filetypes.rust").rustfmt },
 				go = { require("formatter.filetypes.go").gofumpt },
+				dart = { require("formatter.filetypes.dart").dartformat },
 			},
 		})
 	end,

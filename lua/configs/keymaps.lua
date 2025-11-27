@@ -158,7 +158,14 @@ return {
 			{ mode = "n", key = "lg", leader = true, map = ":lua _Git()<CR>", enabled = true, desc = "Git commands" },
 			{ mode = "n", key = "lu", leader = true, map = ":lua _Lua()<CR>", enabled = true, desc = "Lua commands" },
 			{ mode = "n", key = "nd", leader = true, map = ":lua _Node()<CR>", enabled = true, desc = "Node commands" },
-			{ mode = "n", key = "py", leader = true, map = ":lua _Python()<CR>", enabled = true, desc = "Python commands" },
+			{
+				mode = "n",
+				key = "py",
+				leader = true,
+				map = ":lua _Python()<CR>",
+				enabled = true,
+				desc = "Python commands",
+			},
 			{ mode = "n", key = "sq", leader = true, map = ":lua _Sql()<CR>", enabled = true, desc = "SQL commands" },
 
 			-- UI toggles
@@ -173,7 +180,14 @@ return {
 			{ mode = "n", key = "ms", leader = true, map = ":Mason<CR>", enabled = true, desc = "Open Mason" },
 
 			-- LLM session
-			{ mode = "n", key = "cc", leader = true, map = ":LLMSessionToggle<CR>", enabled = true, desc = "Toggle chat" },
+			{
+				mode = "n",
+				key = "cc",
+				leader = true,
+				map = ":LLMSessionToggle<CR>",
+				enabled = true,
+				desc = "Toggle chat",
+			},
 			{
 				mode = "v",
 				key = "ca",
@@ -190,6 +204,24 @@ return {
 			-- Escape mappings
 			{ mode = "i", key = "jk", leader = false, map = "<ESC>", enabled = true, desc = "Escape insert mode" },
 			{ mode = "v", key = "v", leader = false, map = "<ESC>", enabled = true, desc = "Escape visual mode" },
+
+			-- Overseer
+			{
+				mode = "n",
+				key = "ot",
+				leader = true,
+				map = ":OverseerToggle<CR>",
+				enabled = true,
+				desc = "Overseer Toggle",
+			},
+			{
+				mode = "n",
+				key = "or",
+				leader = true,
+				map = ":OverseerRun<CR>",
+				enabled = true,
+				desc = "Overseer Run",
+			},
 		}
 
 		for _, map in ipairs(mapConfig) do

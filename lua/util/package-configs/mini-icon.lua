@@ -57,6 +57,8 @@ return {
 				swp = { glyph = "󰓢", hl = "MiniIconsPurple" },
 				snippets = { glyph = "", hl = "MiniIconsPurple" },
 				sqlite = { glyph = "󰆼", hl = "MiniIconsAzure" },
+				h = { glyph = "", hl = "MiniIconsAzure" },
+				hpp = { glyph = "", hl = "MiniIconsAzure" },
 			},
 			file = {
 				["README.md"] = { glyph = "", hl = "MiniIconsOrange" },
@@ -121,8 +123,6 @@ return {
 				babelrc = { glyph = "󰨥", hl = "MiniIconsRed" },
 				http = { glyph = "󰭄", hl = "MiniIconsRed" },
 				npmrc = { glyph = "", hl = "MiniIconsAzure" },
-				h = { glyph = "󰙲", hl = "MiniIconsAzure" },
-				hpp = { glyph = "󰙲", hl = "MiniIconsAzure" },
 				jade = { glyph = "", hl = "MiniIconsPurple" },
 				diff = { glyph = "", hl = "MiniIconsAzure" },
 				patch = { glyph = "", hl = "MiniIconsAzure" },

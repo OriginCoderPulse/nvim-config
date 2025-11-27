@@ -7,7 +7,7 @@ return {
 			return
 		end
 		md_render.setup({
-			file_types = { "markdown", "codecompanion" },
+			file_types = { "markdown", "llm" },
 			bullet = {
 				highlight = "RenderMarkdownH2",
 				icons = { "●", "○", "◆", "◇" },
@@ -44,6 +44,7 @@ return {
 				preset = "round",
 				row = "@markup.row",
 			},
+			win_options = { concealcursor = { rendered = "nvc" } },
 			completions = {
 				lsp = { enabled = true },
 			},

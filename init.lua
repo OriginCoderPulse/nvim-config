@@ -22,6 +22,7 @@ local config_modules = {
 	{ name = "util.package-configs.mini-icon", enabled = true },
 	{ name = "util.package-configs.mini-file", enabled = true },
 	{ name = "util.package-configs.llm", enabled = true },
+	{ name = "util.package-configs.overseer", enabled = true },
 }
 
 local function safe_require(module_name)

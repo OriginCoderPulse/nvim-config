@@ -1,10 +1,10 @@
 return {
-    filetypes = {
-        "sh",
-    },
-    init_options = {
-        shell = {
-            path = "/bin/zsh",
-        },
-    },
+	filetypes = {
+		"sh",
+	},
+	init_options = {
+		shell = {
+			path = "/bin/zsh",
+		},
+	},
 }

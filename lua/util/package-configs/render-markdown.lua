@@ -1,56 +1,53 @@
-local M = {}
-local status, md_render = pcall(require, "render-markdown")
-
-if not status then
-	M.Config = function()
-		vim.notify("render-markdown is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
-function M.Config()
-	md_render.setup({
-		file_types = { "markdown", "codecompanion" },
-		bullet = {
-			highlight = "RenderMarkdownH2",
-			icons = { "●", "○", "◆", "◇" },
-		},
-		heading = {
-			position = "inline",
-			icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
-			backgrounds = {
-				"RenderMarkdownH1",
-				"RenderMarkdownH2",
-				"RenderMarkdownH3",
-				"RenderMarkdownH4",
-				"RenderMarkdownH5",
-				"RenderMarkdownH6",
+return {
+	repo = "MeanderingProgrammer/render-markdown.nvim",
+	clone_conf = {},
+	config = function()
+		local status, md_render = pcall(require, "render-markdown")
+		if not status then
+			vim.notify("render-markdown is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
+			return
+		end
+		md_render.setup({
+			file_types = { "markdown", "codecompanion" },
+			bullet = {
+				highlight = "RenderMarkdownH2",
+				icons = { "●", "○", "◆", "◇" },
 			},
-			foregrounds = {
-				"RenderMarkdownH1",
-				"RenderMarkdownH2",
-				"RenderMarkdownH3",
-				"RenderMarkdownH4",
-				"RenderMarkdownH5",
-				"RenderMarkdownH6",
+			heading = {
+				position = "inline",
+				icons = { "󰉫 ", "󰉬 ", "󰉭 ", "󰉮 ", "󰉯 ", "󰉰 " },
+				backgrounds = {
+					"RenderMarkdownH1",
+					"RenderMarkdownH2",
+					"RenderMarkdownH3",
+					"RenderMarkdownH4",
+					"RenderMarkdownH5",
+					"RenderMarkdownH6",
+				},
+				foregrounds = {
+					"RenderMarkdownH1",
+					"RenderMarkdownH2",
+					"RenderMarkdownH3",
+					"RenderMarkdownH4",
+					"RenderMarkdownH5",
+					"RenderMarkdownH6",
+				},
 			},
-		},
-		quote = {},
-		dash = { icon = "" },
-		code = {
-			above = "",
-			below = "",
-			highlight = "",
-			highlight_inline = "",
-		},
-		pipe_table = {
-			preset = "round",
-			row = "@markup.row",
-		},
-		completions = {
-			lsp = { enabled = true },
-		},
-	})
-end
-
-return M
+			quote = {},
+			dash = { icon = "" },
+			code = {
+				above = "",
+				below = "",
+				highlight = "",
+				highlight_inline = "",
+			},
+			pipe_table = {
+				preset = "round",
+				row = "@markup.row",
+			},
+			completions = {
+				lsp = { enabled = true },
+			},
+		})
+	end,
+}

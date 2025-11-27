@@ -1,15 +1,12 @@
-local M = {}
-local status, commenter = pcall(require, "Comment")
-
-if not status then
-	M.Config = function()
-		vim.notify("Comment is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
-function M.Config()
-	commenter.setup({})
-end
-
-return M
+return {
+	repo = "numToStr/Comment.nvim",
+	clone_conf = {},
+	config = function()
+		local status, commenter = pcall(require, "Comment")
+		if not status then
+			vim.notify("Comment is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
+			return
+		end
+		commenter.setup({})
+	end,
+}

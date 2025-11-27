@@ -1,6 +1,4 @@
-local M = {}
-
-M.Kinds = {
+return {
 	Text = "󱞎  ",
 	Class = "  ",
 	Function = "󰡱  ",
@@ -27,5 +25,3 @@ M.Kinds = {
 	Operator = "  ",
 	TypeParameter = "󰴾  ",
 }
-
-return M

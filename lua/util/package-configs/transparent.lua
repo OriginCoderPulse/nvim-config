@@ -1,16 +1,13 @@
-local status, transparent = pcall(require, "transparent")
-local M = {}
-
-if not status then
-	M.Config = function()
-		vim.notify("Transparent is not undefined", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
-function M.Config()
-	transparent.setup({
-		require("transparent").setup({
+return {
+	repo = "xiyaowong/transparent.nvim",
+	clone_conf = {},
+	config = function()
+		local status, transparent = pcall(require, "transparent")
+		if not status then
+			vim.notify("Transparent is not undefined", vim.log.levels.ERROR, { title = "Nvim" })
+			return
+		end
+		transparent.setup({
 			groups = {
 				"Normal",
 				"NormalNC",
@@ -43,8 +40,6 @@ function M.Config()
 				"NvimTreeNormal",
 			},
 			exclude_groups = {},
-		}),
-	})
-end
-
-return M
+		})
+	end,
+}

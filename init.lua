@@ -12,9 +12,9 @@ local config_modules = {
 	{ name = "util.package-configs.autopairs", enabled = true },
 	{ name = "util.package-configs.commenter", enabled = true },
 	{ name = "util.package-configs.lualine", enabled = true },
-	{ name = "util.lsp-configs.mason.mason", enabled = true },
-	{ name = "util.package-configs.lsp", enabled = true },
-	{ name = "util.lsp-configs.snips.snips", enabled = true },
+	{ name = "util.package-configs.mason", enabled = true },
+	{ name = "util.package-configs.lsp.lsp", enabled = true },
+	{ name = "util.package-configs.snips", enabled = true },
 	{ name = "util.package-configs.render-markdown", enabled = true },
 	{ name = "util.package-configs.snacks", enabled = true },
 	{ name = "util.package-configs.hop", enabled = true },
@@ -37,8 +37,8 @@ local function load_config()
 	for _, module in ipairs(config_modules) do
 		if module.enabled then
 			local mod = safe_require(module.name)
-			if mod and mod.Config then
-				mod.Config()
+			if mod and mod.config then
+				mod.config()
 			end
 		end
 	end

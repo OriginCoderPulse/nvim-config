@@ -1,85 +1,86 @@
-local M = {}
-local status, ts = pcall(require, "nvim-treesitter.configs")
+return {
+	repo = "nvim-treesitter/nvim-treesitter",
+	clone_conf = {},
+	depend = {
+		"p00f/nvim-ts-rainbow",
+		"windwp/nvim-ts-autotag",
+	},
+	config = function()
+		local status, ts = pcall(require, "nvim-treesitter.configs")
+		if not status then
+			vim.notify("treesitter is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
+			return
+		end
+		require("nvim-treesitter.install").prefer_git = true
 
-if not status then
-	M.Config = function()
-		vim.notify("treesitter is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
-function M.Config()
-	require("nvim-treesitter.install").prefer_git = true
-
-	ts.setup({
-		parser_install_dir = os.getenv("HOME") .. "/.nvim-utils/treesitter",
-		auto_install = true,
-		highlight = {
-			enable = true,
-			additional_vim_regex_highlighting = true,
-		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = "<CR>",
-				node_incremental = "<CR>",
-				node_decremental = "<BS>",
-				scope_incremental = "<TAB>",
+		ts.setup({
+			parser_install_dir = os.getenv("HOME") .. "/.nvim-utils/treesitter",
+			auto_install = true,
+			highlight = {
+				enable = true,
+				additional_vim_regex_highlighting = true,
 			},
-		},
-		indent = {
-			enable = true,
-		},
-		rainbow = {
-			enable = false,
-			extended_mode = true,
-			colors = {
-				"#ffd6af",
-				"#fff4af",
-				"#dcffaf",
-				"#baffaf",
-				"#afe8ff",
-				"#d0afff",
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<CR>",
+					node_incremental = "<CR>",
+					node_decremental = "<BS>",
+					scope_incremental = "<TAB>",
+				},
 			},
-		},
-		autotag = {
-			enable = true,
-			enable_rename = true,
-			enable_close = true,
-			enable_close_on_slash = true,
-			filetypes = {
-				"html",
-				"javascript",
-				"typescript",
-				"javascriptreact",
-				"typescriptreact",
-				"jsx",
-				"tsx",
-				"vue",
-				"markdown",
+			indent = {
+				enable = true,
 			},
-			skip_tags = {
-				"area",
-				"base",
-				"br",
-				"col",
-				"command",
-				"embed",
-				"hr",
-				"img",
-				"slot",
-				"input",
-				"keygen",
-				"link",
-				"meta",
-				"param",
-				"source",
-				"track",
-				"wbr",
-				"menuitem",
+			rainbow = {
+				enable = false,
+				extended_mode = true,
+				colors = {
+					"#ffd6af",
+					"#fff4af",
+					"#dcffaf",
+					"#baffaf",
+					"#afe8ff",
+					"#d0afff",
+				},
 			},
-		},
-	})
-end
-
-return M
+			autotag = {
+				enable = true,
+				enable_rename = true,
+				enable_close = true,
+				enable_close_on_slash = true,
+				filetypes = {
+					"html",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+					"jsx",
+					"tsx",
+					"vue",
+					"markdown",
+				},
+				skip_tags = {
+					"area",
+					"base",
+					"br",
+					"col",
+					"command",
+					"embed",
+					"hr",
+					"img",
+					"slot",
+					"input",
+					"keygen",
+					"link",
+					"meta",
+					"param",
+					"source",
+					"track",
+					"wbr",
+					"menuitem",
+				},
+			},
+		})
+	end,
+}

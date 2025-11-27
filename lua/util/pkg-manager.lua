@@ -1,119 +1,31 @@
-local status, super = pcall(require, "super-installer")
-local M = {}
-
-if not status then
-	M.Config = function()
-		vim.notify("Super-Installer is not found...", vim.log.levels.ERROR, { title = "Nvim" })
-	end
-	return M
-end
-
-function M.Config()
-	super.setup({
-		method = "ssh",
-		ui = {
-			progress = {
-				icon = "",
-			},
-			manager = {
-				icon = {
-					check = "󱥾",
+return {
+	config = function()
+		local status, super = pcall(require, "super-installer")
+		if not status then
+			vim.notify("super-installer is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
+			return
+		end
+		super.setup({
+			method = "ssh",
+			ui = {
+				progress = {
+					icon = "",
+				},
+				manager = {
+					icon = {
+						check = "󱥾",
+					},
 				},
 			},
-		},
-		keymaps = {
-			install = "<leader>i",
-			remove = "<leader>r",
-			update = "<leader>u",
-		},
-		install = {
-			auto_download = false,
-			package_path = os.getenv("HOME") .. "/.nvim-utils/package",
-			packages = {
-				-- float terminal
-				"akinsho/toggleterm.nvim",
-
-				-- language server
-				"williamboman/mason.nvim",
-				"williamboman/mason-lspconfig.nvim",
-				"neovim/nvim-lspconfig",
-
-				-- complete
-				"hrsh7th/nvim-cmp",
-				"hrsh7th/cmp-nvim-lsp",
-				"hrsh7th/cmp-buffer",
-				"hrsh7th/cmp-path",
-				"hrsh7th/cmp-cmdline",
-				"L3MON4D3/LuaSnip",
-				"saadparwaiz1/cmp_luasnip",
-				"xzbdmw/colorful-menu.nvim",
-
-				-- code explanatory note
-				"numToStr/Comment.nvim",
-
-				-- file manage
-				"nvim-tree/nvim-tree.lua",
-
-				-- color scheme
-				"AllenSpaces/miracle-of-god",
-
-				-- icons
-				"nvim-tree/nvim-web-devicons",
-
-				-- status line
-				"nvim-lualine/lualine.nvim",
-				"pnx/lualine-lsp-status",
-
-				-- code hilight
-				"nvim-treesitter/nvim-treesitter",
-				"p00f/nvim-ts-rainbow",
-				"windwp/nvim-autopairs",
-				"windwp/nvim-ts-autotag",
-
-				-- telescope
-				"nvim-telescope/telescope.nvim",
-				"nvim-lua/plenary.nvim",
-				"nvim-telescope/telescope-live-grep-args.nvim",
-				"AllenSpaces/telescope-treesitter-info",
-				"AllenSpaces/telescope-node-packages.nvim",
-
-				-- smooth scroll
-				"psliwka/vim-smoothie",
-
-				-- code format
-				"mhartington/formatter.nvim",
-
-				-- background transparent
-				"xiyaowong/transparent.nvim",
-
-				-- float window ui
-				"MunifTanjim/nui.nvim",
-
-				-- prettier command
-				"folke/noice.nvim",
-
-				-- ai
-				"Kurama622/llm.nvim",
-
-				-- markdown
-				"MeanderingProgrammer/render-markdown.nvim",
-				"folke/snacks.nvim",
-
-				-- progress
-				"j-hui/fidget.nvim",
-
-				-- hop
-				"hadronized/hop.nvim",
-
-				-- gitlens
-				"lewis6991/gitsigns.nvim",
-
-				-- mini
-				"nvim-mini/mini.icons",
-				"nvim-mini/mini.files",
+			keymaps = {
+				install = "<leader>i",
+				remove = "<leader>r",
+				update = "<leader>u",
 			},
-		},
-	})
-end
-
-return M
+			install = {
+				package_path = os.getenv("HOME") .. "/.nvim-utils/package",
+				config_path = os.getenv("HOME") .. "/.config/nvim/lua/util/package-configs",
+			},
+		})
+	end,
+}

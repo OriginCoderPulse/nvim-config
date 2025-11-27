@@ -1,6 +1,5 @@
 return {
 	repo = "Kurama622/llm.nvim",
-	clone_conf = {},
 	config = function()
 		local status, llm = pcall(require, "llm")
 		if not status then

@@ -1,6 +1,5 @@
 return {
 	repo = "mhartington/formatter.nvim",
-	clone_conf = {},
 	config = function()
 		local status, fmt = pcall(require, "formatter")
 		if not status then

@@ -1,6 +1,5 @@
 return {
 	repo = "nvim-treesitter/nvim-treesitter",
-	clone_conf = {},
 	depend = {
 		"p00f/nvim-ts-rainbow",
 		"windwp/nvim-ts-autotag",

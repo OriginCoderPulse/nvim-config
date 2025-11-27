@@ -1,6 +1,5 @@
 return {
 	repo = "hrsh7th/nvim-cmp",
-	clone_conf = {},
 	depend = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",

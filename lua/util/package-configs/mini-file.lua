@@ -1,6 +1,5 @@
 return {
 	repo = "nvim-mini/mini.files",
-	clone_conf = {},
 	config = function()
 		local status, mini_file = pcall(require, "mini.files")
 		if not status then

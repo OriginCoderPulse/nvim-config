@@ -1,6 +1,5 @@
 return {
 	repo = "nvim-telescope/telescope.nvim",
-	clone_conf = {},
 	depend = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-live-grep-args.nvim",

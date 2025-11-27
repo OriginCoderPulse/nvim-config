@@ -1,6 +1,5 @@
 return {
 	repo = "windwp/nvim-autopairs",
-	clone_conf = {},
 	config = function()
 		local status, atpairs = pcall(require, "nvim-autopairs")
 		if not status then

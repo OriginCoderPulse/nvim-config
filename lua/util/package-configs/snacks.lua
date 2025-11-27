@@ -1,6 +1,5 @@
 return {
 	repo = "folke/snacks.nvim",
-	clone_conf = {},
 	config = function()
 		local status, snacks = pcall(require, "snacks")
 		if not status then

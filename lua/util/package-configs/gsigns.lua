@@ -1,6 +1,5 @@
 return {
 	repo = "lewis6991/gitsigns.nvim",
-	clone_conf = {},
 	config = function()
 		local status, git_signs = pcall(require, "gitsigns")
 		if not status then

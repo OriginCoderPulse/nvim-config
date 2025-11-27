@@ -1,6 +1,5 @@
 return {
 	repo = "L3MON4D3/LuaSnip",
-	clone_conf = {},
 	config = function()
 		local status, _ = pcall(require, "luasnip")
 		if not status then

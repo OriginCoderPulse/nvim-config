@@ -1,6 +1,5 @@
 return {
 	repo = "akinsho/toggleterm.nvim",
-	clone_conf = {},
 	config = function()
 		local status, floaterm = pcall(require, "toggleterm")
 		if not status then

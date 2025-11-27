@@ -1,6 +1,5 @@
 return {
 	repo = "folke/noice.nvim",
-	clone_conf = {},
 	depend = {
 		"MunifTanjim/nui.nvim",
 	},

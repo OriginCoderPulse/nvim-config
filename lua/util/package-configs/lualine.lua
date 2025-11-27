@@ -1,6 +1,5 @@
 return {
 	repo = "nvim-lualine/lualine.nvim",
-	clone_conf = {},
 	depend = {
 		"pnx/lualine-lsp-status",
 	},

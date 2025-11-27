@@ -1,6 +1,5 @@
 return {
 	repo = "hadronized/hop.nvim",
-	clone_conf = {},
 	config = function()
 		local status, hop = pcall(require, "hop")
 		if not status then

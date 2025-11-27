@@ -1,6 +1,5 @@
 return {
 	repo = "xiyaowong/transparent.nvim",
-	clone_conf = {},
 	config = function()
 		local status, transparent = pcall(require, "transparent")
 		if not status then

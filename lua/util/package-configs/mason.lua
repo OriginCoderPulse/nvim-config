@@ -1,6 +1,5 @@
 return {
 	repo = "williamboman/mason.nvim",
-	clone_conf = {},
 	depend = {
 		"williamboman/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",

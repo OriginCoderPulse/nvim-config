@@ -1,6 +1,4 @@
 return {
-	repo = "",
-	clone_conf = {},
 	config = function()
 		vim.g.mapleader = " "
 		local keymap = vim.keymap

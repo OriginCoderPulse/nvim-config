@@ -1,6 +1,4 @@
 return {
-	repo = "",
-	clone_conf = {},
 	config = function()
 		local typeMap = {
 			global = vim.g,

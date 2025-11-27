@@ -1,6 +1,5 @@
 return {
 	repo = "MeanderingProgrammer/render-markdown.nvim",
-	clone_conf = {},
 	config = function()
 		local status, md_render = pcall(require, "render-markdown")
 		if not status then

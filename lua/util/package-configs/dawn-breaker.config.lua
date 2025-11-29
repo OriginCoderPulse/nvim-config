@@ -1,5 +1,5 @@
 return {
-	repo = "AllenSpaces/miracle-of-god",
+	repo = "OriginCoderPulse/DawnBreaker.nvim",
 	depend = { "psliwka/vim-smoothie" },
 	config = function() end,
 }

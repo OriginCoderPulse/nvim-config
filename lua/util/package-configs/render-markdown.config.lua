@@ -1,5 +1,8 @@
 return {
 	repo = "MeanderingProgrammer/render-markdown.nvim",
+	loaded = {
+		ft = { "markdown", "llm" },
+	},
 	config = function()
 		local status, md_render = pcall(require, "render-markdown")
 		if not status then

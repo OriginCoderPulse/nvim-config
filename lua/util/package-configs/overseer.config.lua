@@ -1,5 +1,5 @@
 return {
-	repo = "AllenSpaces/OverseerForTelescope.nvim",
+	repo = "OriginCoderPulse/OverseerForTelescope.nvim",
 	config = function()
 		local status, overseer = pcall(require, "overseer")
 		if not status then

@@ -72,7 +72,7 @@ return {
 				["commands.lua"] = { glyph = "󰇄", hl = "MiniIconsPurple" },
 				["custom.lua"] = { glyph = "󰬎", hl = "MiniIconsPurple" },
 				["keymaps.lua"] = { glyph = "󰌌", hl = "MiniIconsPurple" },
-				["pkg-manager.lua"] = { glyph = "󱑢", hl = "MiniIconsPurple" },
+				["synapse.lua"] = { glyph = "󱑢", hl = "MiniIconsPurple" },
 				["www"] = { glyph = "󰇧", hl = "MiniIconsOrange" },
 				["LICENSE"] = { glyph = "", hl = "MiniIconsOrange" },
 				["server.js"] = { glyph = "󰒋", hl = "MiniIconsPurple" },

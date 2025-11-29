@@ -3,8 +3,8 @@ return {
 	depend = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-live-grep-args.nvim",
-		"AllenSpaces/telescope-treesitter-info",
-		"AllenSpaces/telescope-node-packages.nvim",
+		"OriginCoderPulse/telescope-treesitter-info",
+		"OriginCoderPulse/telescope-node-packages.nvim",
 	},
 	config = function()
 		local status, telescope = pcall(require, "telescope")

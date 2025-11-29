@@ -1,45 +1,83 @@
-local config_modules = {
-	{ name = "configs.custom", enabled = true },
-	{ name = "configs.keymaps", enabled = true },
-	{ name = "configs.commands", enabled = true },
-	{ name = "util.pkg-manager", enabled = true },
-	{ name = "util.package-configs.tree-sitter", enabled = true },
-	{ name = "util.package-configs.transparent", enabled = true },
-	{ name = "util.package-configs.telescope", enabled = true },
-	{ name = "util.package-configs.noice", enabled = true },
-	{ name = "util.package-configs.formatter", enabled = true },
-	{ name = "util.package-configs.floaterm", enabled = true },
-	{ name = "util.package-configs.autopairs", enabled = true },
-	{ name = "util.package-configs.commenter", enabled = true },
-	{ name = "util.package-configs.lualine", enabled = true },
-	{ name = "util.package-configs.mason", enabled = true },
-	{ name = "util.package-configs.lsp.lsp", enabled = true },
-	{ name = "util.package-configs.snips", enabled = true },
-	{ name = "util.package-configs.render-markdown", enabled = true },
-	{ name = "util.package-configs.snacks", enabled = true },
-	{ name = "util.package-configs.hop", enabled = true },
-	{ name = "util.package-configs.gsigns", enabled = true },
-	{ name = "util.package-configs.mini-icon", enabled = true },
-	{ name = "util.package-configs.mini-file", enabled = true },
-	{ name = "util.package-configs.llm", enabled = true },
-	{ name = "util.package-configs.overseer", enabled = true },
-}
+local function scan_config_files(dir_name)
+	local configs = {}
+	local config_path = vim.fn.stdpath("config")
+	local lua_path = config_path .. "/lua"
+	local target_path = lua_path .. "/" .. dir_name
 
-local function safe_require(module_name)
-	local ok, result = pcall(require, module_name)
-	if not ok then
-		vim.notify("Failed to load module: " .. module_name .. " - " .. result, vim.log.levels.WARN, { title = "Nvim" })
-		return nil
+	local files = vim.fn.globpath(target_path, "**/*.config.lua", true, true)
+
+	for _, file in ipairs(files) do
+		local relative_path = file:gsub("^" .. lua_path .. "/", ""):gsub("%.lua$", "")
+		local module_name = relative_path:gsub("/", ".")
+		table.insert(configs, { name = module_name, file_path = file, enabled = true })
 	end
-	return result
+
+	return configs
+end
+
+local config_modules = {}
+local configs_configs = scan_config_files("configs")
+local util_configs = scan_config_files("util")
+
+for _, config in ipairs(configs_configs) do
+	table.insert(config_modules, config)
+end
+for _, config in ipairs(util_configs) do
+	table.insert(config_modules, config)
+end
+
+local function safe_require(module_name, file_path)
+	if file_path then
+		local ok, result = pcall(dofile, file_path)
+		if not ok then
+			vim.notify(
+				"Failed to load module: " .. module_name .. " - " .. result,
+				vim.log.levels.WARN,
+				{ title = "Nvim" }
+			)
+			return nil
+		end
+		return result
+	else
+		local ok, result = pcall(require, module_name)
+		if not ok then
+			vim.notify(
+				"Failed to load module: " .. module_name .. " - " .. result,
+				vim.log.levels.WARN,
+				{ title = "Nvim" }
+			)
+			return nil
+		end
+		return result
+	end
 end
 
 local function load_config()
 	for _, module in ipairs(config_modules) do
 		if module.enabled then
-			local mod = safe_require(module.name)
+			local mod = safe_require(module.name, module.file_path)
 			if mod and mod.config then
-				mod.config()
+				if mod.loaded then
+					if mod.loaded.event and #mod.loaded.event > 0 then
+						vim.api.nvim_create_autocmd(mod.loaded.event, {
+							group = vim.api.nvim_create_augroup(module.name, { clear = true }),
+							once = true,
+							callback = function()
+								mod.config()
+							end,
+						})
+					elseif mod.loaded.ft and #mod.loaded.ft > 0 then
+						vim.api.nvim_create_autocmd("FileType", {
+							group = vim.api.nvim_create_augroup(module.name, { clear = true }),
+							pattern = mod.loaded.ft,
+							callback = function()
+								mod.config()
+							end,
+						})
+					end
+				else
+					mod.config()
+				end
 			end
 		end
 	end

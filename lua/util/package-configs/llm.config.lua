@@ -7,7 +7,7 @@ return {
 			return
 		end
 		llm.setup({
-			prompt = "请用中文回答",
+			prompt = "Answer With Chinese!",
 			max_tokens = 512,
 			api_type = "ollama",
 			prefix = {

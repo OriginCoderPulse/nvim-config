@@ -72,7 +72,7 @@ return {
 				},
 				method = "append",
 			},
-			{ type = "command", attribute = "colorscheme", value = "miracle-of-god", isFunc = true },
+			{ type = "command", attribute = "colorscheme", value = "dawnbreaker", isFunc = true },
 			{
 				type = "diagnostic",
 				attribute = "config",

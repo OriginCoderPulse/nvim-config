@@ -5,12 +5,13 @@ return {
 		"windwp/nvim-ts-autotag",
 	},
 	config = function()
+		require("nvim-treesitter.install").prefer_git = true
 		local status, ts = pcall(require, "nvim-treesitter.configs")
+
 		if not status then
 			vim.notify("treesitter is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
 			return
 		end
-		require("nvim-treesitter.install").prefer_git = true
 
 		ts.setup({
 			parser_install_dir = os.getenv("HOME") .. "/.nvim-utils/treesitter",

@@ -21,13 +21,7 @@ return {
 			},
 		},
 	},
-	config = function()
-		local status, mason = pcall(require, "mason")
-		if not status then
-			vim.notify("mason is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
-			return
-		end
-		mason.setup({
+	config = {
 			install_root_dir = os.getenv("HOME") .. "/.nvim-utils/mason",
 			ui = {
 				border = "rounded",
@@ -39,6 +33,5 @@ return {
 					package_uninstalled = "󱧙",
 				},
 			},
-		})
-	end,
+	},
 }

@@ -3,13 +3,7 @@ return {
 	depend = {
 		"pnx/lualine-lsp-status",
 	},
-	config = function()
-		local status, lualine = pcall(require, "lualine")
-		if not status then
-			vim.notify("lualine is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
-			return
-		end
-		lualine.setup({
+	config = {
 			options = {
 				icons_enabled = true,
 				theme = "dawnbreaker",
@@ -91,6 +85,5 @@ return {
 					},
 				},
 			},
-		})
-	end,
+	},
 }

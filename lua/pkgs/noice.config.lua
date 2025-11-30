@@ -3,42 +3,35 @@ return {
 	depend = {
 		"MunifTanjim/nui.nvim",
 	},
-	config = function()
-		local status_noice, noice = pcall(require, "noice")
-		if not status_noice then
-			vim.notify("noice is not found", vim.log.levels.ERROR, { title = "Nvim" })
-			return
-		end
-		noice.setup({
-			cmdline = {
-				enabled = true,
-				view = "cmdline_popup",
-				position = {
-					row = 1,
-					col = "50%",
-				},
-				format = {
-					cmdline = { icon = " " },
-					search_down = { icon = "󰁈 " },
-					search_up = { icon = " " },
-					filter = { icon = "󰤶 " },
-					help = { icon = "󱏘 " },
-					input = { icon = "󰽉 " },
-					lua = { icon = " " },
-				},
+	config = {
+		cmdline = {
+			enabled = true,
+			view = "cmdline_popup",
+			position = {
+				row = 1,
+				col = "50%",
 			},
-			lsp = {
-				progress = {
-					enabled = false,
-				},
+			format = {
+				cmdline = { icon = " " },
+				search_down = { icon = "󰁈 " },
+				search_up = { icon = " " },
+				filter = { icon = "󰤶 " },
+				help = { icon = "󱏘 " },
+				input = { icon = "󰽉 " },
+				lua = { icon = " " },
 			},
-			presets = {
-				bottom_search = false,
-				command_palette = true,
-				long_message_to_split = true,
-				inc_rename = true,
-				lsp_doc_border = true,
+		},
+		lsp = {
+			progress = {
+				enabled = false,
 			},
-		})
-	end,
+		},
+		presets = {
+			bottom_search = false,
+			command_palette = true,
+			long_message_to_split = true,
+			inc_rename = true,
+			lsp_doc_border = true,
+		},
+	},
 }

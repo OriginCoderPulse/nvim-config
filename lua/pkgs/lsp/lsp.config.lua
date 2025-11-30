@@ -1,13 +1,14 @@
 return {
-	repo = "hrsh7th/nvim-cmp",
+	repo = "neovim/nvim-lspconfig",
 	depend = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lua",
 		"saadparwaiz1/cmp_luasnip",
 		"xzbdmw/colorful-menu.nvim",
-		"neovim/nvim-lspconfig",
+		"hrsh7th/nvim-cmp",
 	},
 	config = function()
 		local status, cmp = pcall(require, "cmp")
@@ -68,6 +69,7 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "lua_cmp" },
+				{ name = "nvim_lua" },
 			},
 			cmdline = {
 				search = {
@@ -100,6 +102,7 @@ return {
 					path = "   󰬗",
 					lua_cmp = "   󰬊",
 					cmdline = "   ",
+					nvim_lua = "  ",
 				})[entry.source.name]
 
 				return vim_item
@@ -143,35 +146,7 @@ return {
 			})
 		end
 
-		local function enable_servers()
-			vim.lsp.config("*", {
-				flags = {
-					debounce_text_changes = 150,
-				},
-				on_attach = function() end,
-			})
-
-			local servers = {
-				"lua_ls",
-				"jdtls",
-				"ts_ls",
-				"pylsp",
-				"gopls",
-				"rust_analyzer",
-				"bashls",
-				"html",
-				"cssls",
-				"clangd",
-				"jsonls",
-				"emmet_ls",
-				"dcmls",
-			}
-
-			vim.lsp.enable(servers)
-		end
-
 		setup_cmp()
 		setup_cmdline()
-		enable_servers()
 	end,
 }

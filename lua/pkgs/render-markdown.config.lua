@@ -1,8 +1,5 @@
 return {
 	repo = "MeanderingProgrammer/render-markdown.nvim",
-	loaded = {
-		ft = { "markdown", "llm" },
-	},
 	config = function()
 		local status, md_render = pcall(require, "render-markdown")
 		if not status then
@@ -10,7 +7,7 @@ return {
 			return
 		end
 		md_render.setup({
-			file_types = { "markdown", "llm" },
+			file_types = { "markdown", "codecompanion" },
 			bullet = {
 				highlight = "RenderMarkdownH2",
 				icons = { "●", "○", "◆", "◇" },

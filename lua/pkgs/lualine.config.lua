@@ -43,12 +43,14 @@ return {
 							unnamed = "",
 						},
 					},
-				},
-				lualine_c = {
 					{
-						"synapse-status",
+						"codecompanion",
+						icon = "",
+						spinner_symbols = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+						done_symbol = "󰃗",
 					},
 				},
+				lualine_c = {},
 				lualine_x = {
 					{
 						"diagnostics",

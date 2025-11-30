@@ -1,8 +1,25 @@
 return {
 	repo = "williamboman/mason.nvim",
 	depend = {
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+		{
+			"williamboman/mason-lspconfig.nvim",
+			opt = {
+				automatic_enable = {
+					"bash_ls",
+					"clangd",
+					"cssls",
+					"dcmls",
+					"emmet_ls",
+					"gopls",
+					"html",
+					"jdtls",
+					"jsonls",
+					"lua_ls",
+					"pylsp",
+					"ts_ls",
+				},
+			},
+		},
 	},
 	config = function()
 		local status, mason = pcall(require, "mason")

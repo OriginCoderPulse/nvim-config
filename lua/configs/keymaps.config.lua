@@ -71,6 +71,14 @@ return {
 				enabled = true,
 				desc = "Current buffer fuzzy find",
 			},
+			{
+				mode = "n",
+				key = "fg",
+				leader = true,
+				map = ":Telescope git_branch<CR>",
+				enabled = true,
+				desc = "Search for differences across multiple commits on the same branch",
+			},
 
 			-- LSP navigation (jump to definitions, references, etc.)
 			{
@@ -184,7 +192,7 @@ return {
 				mode = "n",
 				key = "cc",
 				leader = true,
-				map = ":LLMSessionToggle<CR>",
+				map = ":CodeCompanionChat Toggle<CR>",
 				enabled = true,
 				desc = "Toggle chat",
 			},

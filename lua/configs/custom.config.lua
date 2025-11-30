@@ -39,18 +39,6 @@ return {
 			{
 				type = "option",
 				attribute = "runtimepath",
-				value = os.getenv("HOME") .. "/.nvim-utils/package/*",
-				method = "append",
-			},
-			{
-				type = "option",
-				attribute = "runtimepath",
-				value = os.getenv("HOME") .. "/.nvim-utils/package/*/after",
-				method = "append",
-			},
-			{
-				type = "option",
-				attribute = "runtimepath",
 				value = os.getenv("HOME") .. "/.nvim-utils/treesitter",
 				method = "append",
 			},

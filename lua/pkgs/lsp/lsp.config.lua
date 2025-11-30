@@ -92,7 +92,7 @@ return {
 					vim_item.abbr = highlights_info.text
 				end
 
-				local kinds = require("util.package-configs.lsp.kinds.kinds")
+				local kinds = require("pkgs.lsp.kinds.kinds")
 				vim_item.kind = string.format("%s %s", kinds[vim_item.kind] or vim_item.kind, vim_item.kind .. "  ")
 
 				vim_item.menu = ({

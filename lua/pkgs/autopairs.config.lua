@@ -1,8 +1,5 @@
 return {
 	repo = "windwp/nvim-autopairs",
-	loaded ={
-		event = {"InsertEnter", "CmdlineEnter"},
-	},
 	config = function()
 		local status, atpairs = pcall(require, "nvim-autopairs")
 		if not status then

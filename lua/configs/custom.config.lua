@@ -60,7 +60,7 @@ return {
 				},
 				method = "append",
 			},
-			{ type = "command", attribute = "colorscheme", value = "dawnbreaker", isFunc = true },
+			-- { type = "command", attribute = "colorscheme", value = "", isFunc = true },
 			{
 				type = "diagnostic",
 				attribute = "config",

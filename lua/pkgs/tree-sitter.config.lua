@@ -1,7 +1,6 @@
 return {
 	repo = "nvim-treesitter/nvim-treesitter",
 	depend = {
-		"p00f/nvim-ts-rainbow",
 		"windwp/nvim-ts-autotag",
 	},
 	initialization = function(package)

@@ -212,24 +212,6 @@ return {
 			-- Escape mappings
 			{ mode = "i", key = "jk", leader = false, map = "<ESC>", enabled = true, desc = "Escape insert mode" },
 			{ mode = "v", key = "v", leader = false, map = "<ESC>", enabled = true, desc = "Escape visual mode" },
-
-			-- Overseer
-			{
-				mode = "n",
-				key = "ot",
-				leader = true,
-				map = ":OverseerToggle<CR>",
-				enabled = true,
-				desc = "Overseer Toggle",
-			},
-			{
-				mode = "n",
-				key = "or",
-				leader = true,
-				map = ":OverseerRun<CR>",
-				enabled = true,
-				desc = "Overseer Run",
-			},
 		}
 
 		for _, map in ipairs(mapConfig) do

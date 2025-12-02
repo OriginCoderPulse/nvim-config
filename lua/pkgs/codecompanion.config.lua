@@ -23,7 +23,7 @@ return {
 							["Content-Type"] = "application/json",
 						},
 						parameters = {
-							sync = true,
+							sync = false,
 						},
 					})
 				end,
@@ -39,6 +39,17 @@ return {
 			},
 			inline = {
 				adapter = "ollama",
+				keymaps = {
+					accept_change = {
+						modes = { n = "ga" },
+						description = "Accept the suggested change",
+					},
+					reject_change = {
+						modes = { n = "gr" },
+						opts = { nowait = true },
+						description = "Reject the suggested change",
+					},
+				},
 			},
 		},
 		display = {

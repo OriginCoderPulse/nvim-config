@@ -1,21 +1,15 @@
 return {
-	init_options = {
-		maxTsServerMemory = 8192,
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vim.fn.stdpath("data")
-					.. "/mason/packages/vue-language-server/node_modules/@vue/language-server/node_modules/@vue/typescript-plugin",
-				languages = { "vue" },
-			},
-		},
-	},
-	filetypes = {
-		"javascript",
-		"typescript",
-		"javascriptreact",
-		"typescriptreact",
-		"vue",
-	},
-	root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+	init_options = { hostInfo = 'neovim' },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
+	root_dir = function(bufnr, on_dir)
+		local root_markers = { 'package-lock.json', 'yarn.lock', 'pnpm-lock.yaml', 'bun.lockb', 'bun.lock' }
+		root_markers = vim.fn.has('nvim-0.11.3') == 1 and { root_markers, { '.git' } }
+		  or vim.list_extend(root_markers, { '.git' })
+		local deno_path = vim.fs.root(bufnr, { 'deno.json', 'deno.jsonc', 'deno.lock' })
+		local project_root = vim.fs.root(bufnr, root_markers)
+		if deno_path and (not project_root or #deno_path >= #project_root) then
+		  return
+		end
+		on_dir(project_root or vim.fn.getcwd())
+	  end,
 }

@@ -9,6 +9,11 @@ return {
 		},
 		picker = {
 			enabled = true,
+			formatters = {
+				file = {
+					filename_only = true,
+				},
+			},
 		},
 		notifier = {
 			enabled = true,

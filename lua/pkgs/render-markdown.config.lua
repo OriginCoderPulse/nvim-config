@@ -1,6 +1,6 @@
 return {
 	repo = "MeanderingProgrammer/render-markdown.nvim",
-	config = {
+	opts = {
 			file_types = { "markdown", "codecompanion" },
 			bullet = {
 				highlight = "RenderMarkdownH2",

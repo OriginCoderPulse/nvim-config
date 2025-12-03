@@ -3,7 +3,7 @@ return {
 	depend = {
 		"MunifTanjim/nui.nvim",
 	},
-	config = {
+	opts = {
 			cmdline = {
 				enabled = true,
 				view = "cmdline_popup",

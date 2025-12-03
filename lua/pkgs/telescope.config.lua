@@ -7,7 +7,7 @@ return {
 		"OriginCoderPulse/telescope-treesitter-info",
 		"OriginCoderPulse/telescope-node-packages.nvim",
 	},
-	config = {
+	opts = {
 		defaults = {
 			preview = false,
 			layout_config = {

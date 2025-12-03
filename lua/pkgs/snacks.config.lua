@@ -1,6 +1,6 @@
 return {
 	repo = "folke/snacks.nvim",
-	config = {
+	opts = {
 		indent = {
 			enabled = true,
 			animate = {

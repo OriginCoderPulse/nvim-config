@@ -3,7 +3,7 @@ return {
 	depend = {
 		"pnx/lualine-lsp-status",
 	},
-	config = {
+	opts = {
 			options = {
 				icons_enabled = true,
 				theme = "dawnbreaker",

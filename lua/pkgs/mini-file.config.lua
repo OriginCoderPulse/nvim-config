@@ -1,6 +1,6 @@
 return {
 	repo = "nvim-mini/mini.files",
-	config = {
+	opts = {
 		mappings = {
 			go_in_plus = "<CR>",
 			close = "<leader>e",

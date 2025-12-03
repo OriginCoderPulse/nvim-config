@@ -1,6 +1,6 @@
 return {
 	repo = "mhartington/formatter.nvim",
-	config = {
+	opts = {
 		logging = false,
 		filetype = {
 			json = { require("formatter.filetypes.json").prettier },

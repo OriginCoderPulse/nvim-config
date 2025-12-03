@@ -1,6 +1,6 @@
 return {
 	repo = "xiyaowong/transparent.nvim",
-	config = {
+	opts = {
 			groups = {
 				"Normal",
 				"NormalNC",

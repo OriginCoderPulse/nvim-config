@@ -1,6 +1,6 @@
 return {
 	repo = "lewis6991/gitsigns.nvim",
-	config = {
+	opts = {
 			signs_staged_enable = false,
 			signcolumn = false,
 			current_line_blame = true,

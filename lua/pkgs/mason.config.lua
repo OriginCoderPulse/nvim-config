@@ -21,7 +21,7 @@ return {
 			},
 		},
 	},
-	config = {
+	opts = {
 		install_root_dir = os.getenv("HOME") .. "/.nvim-utils/mason",
 		ui = {
 			border = "rounded",

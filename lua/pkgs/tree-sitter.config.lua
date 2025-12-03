@@ -7,7 +7,7 @@ return {
 		package({ "install" }).prefer_git = true
 	end,
 	primary = "nvim-treesitter.configs",
-	config = {
+	opts = {
 		parser_install_dir = os.getenv("HOME") .. "/.nvim-utils/treesitter",
 		auto_install = true,
 		highlight = {

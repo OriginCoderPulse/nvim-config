@@ -3,7 +3,7 @@ return {
 	initialization = function(package)
 		package.mock_nvim_web_devicons()
 	end,
-	config = {
+	opts = {
 		style = "glyph",
 		default = {
 			file = {

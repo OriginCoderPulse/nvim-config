@@ -5,7 +5,7 @@ return {
 		"franco-ruggeri/codecompanion-lualine.nvim",
 	},
 	tag = "v17.33.0",
-	config = {
+	opts = {
 		opts = {
 			language = "zh",
 			send_code = true,

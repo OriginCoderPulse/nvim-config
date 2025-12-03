@@ -27,7 +27,9 @@ return {
 				mode = "n",
 				key = "ff",
 				leader = true,
-				map = ":Telescope find_files<CR>",
+				map = function()
+					Snacks.picker.files({ layout = "select" })
+				end,
 				enabled = true,
 				desc = "Find files",
 			},
@@ -35,7 +37,9 @@ return {
 				mode = "n",
 				key = "fo",
 				leader = true,
-				map = ":Telescope oldfiles<CR>",
+				map = function()
+					Snacks.picker.recent({ layout = "select" })
+				end,
 				enabled = true,
 				desc = "Find old files",
 			},
@@ -43,39 +47,19 @@ return {
 				mode = "n",
 				key = "fl",
 				leader = true,
-				map = ":Telescope live_grep_args<CR>",
+				map = function()
+					Snacks.picker.grep()
+				end,
 				enabled = true,
 				desc = "Live grep",
 			},
 			{
 				mode = "n",
-				key = "fh",
-				leader = true,
-				map = ":Telescope treesitter_info<CR>",
-				enabled = true,
-				desc = "Treesitter info",
-			},
-			{
-				mode = "n",
-				key = "fn",
-				leader = true,
-				map = ":Telescope node_packages<CR>",
-				enabled = true,
-				desc = "Node packages",
-			},
-			{
-				mode = "n",
-				key = "fc",
-				leader = true,
-				map = ":Telescope current_buffer_fuzzy_find<CR>",
-				enabled = true,
-				desc = "Current buffer fuzzy find",
-			},
-			{
-				mode = "n",
 				key = "fg",
 				leader = true,
-				map = ":Telescope git_branch<CR>",
+				map = function()
+					Snacks.picker.git_branches({ layout = "dropdown" })
+				end,
 				enabled = true,
 				desc = "Search for differences across multiple commits on the same branch",
 			},

@@ -7,6 +7,9 @@ return {
 				enabled = true,
 			},
 		},
+		picker = {
+			enabled = true,
+		},
 		notifier = {
 			enabled = true,
 			auto_close = {

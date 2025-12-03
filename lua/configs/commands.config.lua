@@ -6,9 +6,13 @@ return {
 				pattern = "*",
 				callback = function()
 					if vim.api.nvim_buf_get_name(0) == "" then
-						local ok, _ = pcall(vim.fn.execute, "Telescope find_files")
+						local ok, _ = pcall(vim.fn.execute, "lua Snacks.picker.files({ layout = 'select' })")
 						if not ok then
-							vim.notify("Telescope is not available.", vim.log.levels.WARN, { title = "NvimCommands" })
+							vim.notify(
+								"Snacks Picker is not available.",
+								vim.log.levels.WARN,
+								{ title = "NvimCommands" }
+							)
 						end
 					end
 				end,

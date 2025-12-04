@@ -4,7 +4,6 @@ require("synapse").setup({
 	method = "ssh",
 	opts = {
 		package_path = os.getenv("HOME") .. "/.nvim-utils/package",
-		config_path = os.getenv("HOME") .. "/.config/nvim/lua/pkgs",
 		ui = {
 			style = "float",
 		},

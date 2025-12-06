@@ -6,7 +6,7 @@ return {
 				pattern = "*",
 				callback = function()
 					if vim.api.nvim_buf_get_name(0) == "" then
-						local ok, _ = pcall(vim.fn.execute, "lua Snacks.picker.files({ layout = 'select' })")
+						local ok, _ = pcall(vim.fn.execute, "lua Snacks.picker.files()")
 						if not ok then
 							vim.notify(
 								"Snacks Picker is not available.",

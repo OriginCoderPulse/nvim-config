@@ -12,12 +12,12 @@ return {
 	},
 	config = function()
 		local status, cmp = pcall(require, "cmp")
+		local luasnip = require("luasnip")
+
 		if not status then
 			vim.notify("cmp is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
 			return
 		end
-
-		local luasnip = require("luasnip")
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
@@ -146,7 +146,15 @@ return {
 			})
 		end
 
+		local function setup_autopairs()
+			local autopairs = require("nvim-autopairs")
+			autopairs.setup({})
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+		end
+
 		setup_cmp()
 		setup_cmdline()
+		setup_autopairs()
 	end,
 }

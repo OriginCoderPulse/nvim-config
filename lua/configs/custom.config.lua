@@ -1,3 +1,5 @@
+--- Custom Neovim options and settings configuration
+--- This file configures global options, vim options, and diagnostic settings
 return {
 	config = function()
 		local typeMap = {

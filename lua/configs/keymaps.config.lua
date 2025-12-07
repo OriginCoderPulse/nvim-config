@@ -1,5 +1,8 @@
+--- Custom keymaps configuration
+--- This file defines all custom keybindings for Neovim
 return {
 	config = function()
+		-- Set leader key
 		vim.g.mapleader = " "
 		local keymap = vim.keymap
 		local opt = { noremap = true, silent = true }

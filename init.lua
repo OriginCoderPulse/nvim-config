@@ -6,8 +6,14 @@ require("synapse").setup({
 		package_path = os.getenv("HOME") .. "/.nvim-utils/package",
 		ui = {
 			style = "float",
+			icons = {
+				upgrade = {
+					glyph = "",
+				},
+			},
 		},
 	},
+	imports = {},
 	keys = {
 		download = "<leader>i",
 		remove = "<leader>r",

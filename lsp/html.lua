@@ -1,17 +1,11 @@
 return {
-	filetypes = {
-		"html",
-		"xhtml",
-		"xml",
-		"svg",
-		"mathml",
-		"htmlx",
-	},
+	filetypes = { "html", "templ" },
 	init_options = {
-		html = {
-			options = {
-				["bem.enabled"] = true,
-			},
+		configurationSection = { "html", "css", "javascript" },
+		embeddedLanguages = {
+			css = true,
+			javascript = true,
 		},
+		provideFormatter = true,
 	},
 }

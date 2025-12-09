@@ -1,10 +1,6 @@
 return {
+	cmd = { "bash-language-server", "start" },
 	filetypes = {
 		"sh",
-	},
-	init_options = {
-		shell = {
-			path = "/bin/zsh",
-		},
 	},
 }

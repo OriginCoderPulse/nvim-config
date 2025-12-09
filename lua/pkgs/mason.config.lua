@@ -1,26 +1,21 @@
 return {
 	repo = "williamboman/mason.nvim",
-	depend = {
-		{
-			"williamboman/mason-lspconfig.nvim",
-			opt = {
-				automatic_enable = {
-					"bash_ls",
-					"clangd",
-					"cssls",
-					"dcmls",
-					"emmet_ls",
-					"gopls",
-					"html",
-					"jdtls",
-					"jsonls",
-					"lua_ls",
-					"pylsp",
-					"ts_ls",
-				},
-			},
-		},
-	},
+	initialization = function()
+		vim.lsp.enable({
+			"bashls",
+			"clangd",
+			"cssls",
+			"dart",
+			"emmet_ls",
+			"gopls",
+			"html",
+			"jdtls",
+			"jsonls",
+			"lua_ls",
+			"pylsp",
+			"ts_ls",
+		})
+	end,
 	opts = {
 		install_root_dir = os.getenv("HOME") .. "/.nvim-utils/mason",
 		ui = {

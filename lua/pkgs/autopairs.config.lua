@@ -6,7 +6,6 @@ return {
 			vim.notify("auto-pairs is not found ...", vim.log.levels.ERROR, { title = "Nvim" })
 			return
 		end
-		
 		atpairs.setup({})
 	end,
 }

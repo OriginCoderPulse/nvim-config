@@ -66,6 +66,16 @@ return {
 				enabled = true,
 				desc = "Search for differences across multiple commits on the same branch",
 			},
+			{
+				mode = "n",
+				key = "fb",
+				leader = true,
+				map = function()
+					Snacks.picker.buffers()
+				end,
+				enabled = true,
+				desc = "Search for differences across multiple commits on the same branch",
+			},
 
 			-- LSP navigation (jump to definitions, references, etc.)
 			{

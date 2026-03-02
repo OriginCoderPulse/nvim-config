@@ -14,6 +14,13 @@ return {
 					filename_only = true,
 				},
 			},
+			win = {
+				input = {
+					keys = {
+						["jk"] = { "close", mode = { "n", "i" } },
+					},
+				},
+			},
 		},
 		notifier = {
 			enabled = true,

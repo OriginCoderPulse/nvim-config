@@ -24,19 +24,7 @@ return {
 			},
 		},
 		indent = {
-			enable = true,
-		},
-		rainbow = {
 			enable = false,
-			extended_mode = true,
-			colors = {
-				"#ffd6af",
-				"#fff4af",
-				"#dcffaf",
-				"#baffaf",
-				"#afe8ff",
-				"#d0afff",
-			},
 		},
 		autotag = {
 			enable = true,

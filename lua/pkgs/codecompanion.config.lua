@@ -35,7 +35,7 @@ return {
 					adapter = "ollama",
 					roles = {
 						user = " Wu Kuohao 󱚝 [Allen] 󰅨",
-						llm = " Qwen-vl:4b Service",
+						llm = " GPT-OSS:20b Service",
 					},
 				},
 				inline = {
@@ -58,7 +58,7 @@ return {
 					provider = "telescope",
 				},
 				chat = {
-					intro_message = "Welcome to the QWEN model",
+					intro_message = "Welcome to the GPT model",
 					icons = {
 						pinned_buffer = " ",
 						watched_buffer = "󰡭 ",
@@ -73,7 +73,6 @@ return {
 						width = 0.7,
 						relative = "editor",
 						full_height = true,
-	
 						opts = {
 							breakindent = true,
 							cursorcolumn = false,

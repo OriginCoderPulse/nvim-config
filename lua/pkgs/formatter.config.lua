@@ -6,9 +6,9 @@ return {
 			filetype = {
 				json = { require("formatter.filetypes.json").prettier },
 				javascript = { require("formatter.filetypes.javascript").prettier },
-				javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
+				jsx = { require("formatter.filetypes.javascriptreact").prettier },
 				typescript = { require("formatter.filetypes.typescript").prettier },
-				typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
+				tsx = { require("formatter.filetypes.typescriptreact").prettier },
 				html = { require("formatter.filetypes.html").prettier },
 				vue = { require("formatter.filetypes.vue").prettier },
 				css = { require("formatter.filetypes.css").prettier },
@@ -26,6 +26,7 @@ return {
 				rust = { require("formatter.filetypes.rust").rustfmt },
 				go = { require("formatter.filetypes.go").gofumpt },
 				dart = { require("formatter.filetypes.dart").dartformat },
+				yaml = { require("formatter.filetypes.yaml").yamlfmt },
 			},
 		})
 	end,

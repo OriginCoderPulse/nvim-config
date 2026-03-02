@@ -4,86 +4,86 @@ return {
 		"pnx/lualine-lsp-status",
 	},
 	opts = {
-			options = {
-				icons_enabled = true,
-				theme = "dawnbreaker",
-				component_separators = { left = " ", right = " " },
-				section_separators = { left = "  ", right = "  " },
-				always_divide_middle = true,
-				globalstatus = true,
-				refresh = {
-					statusline = 1,
-					tabline = 1,
-					winbar = 1,
+		options = {
+			icons_enabled = true,
+			theme = "dawnbreaker",
+			component_separators = { left = " ", right = " " },
+			section_separators = { left = "  ", right = "  " },
+			always_divide_middle = true,
+			globalstatus = true,
+			refresh = {
+				statusline = 1,
+				tabline = 1,
+				winbar = 1,
+			},
+		},
+		sections = {},
+		tabline = {
+			lualine_a = {
+				"diff",
+			},
+			lualine_b = {
+				{
+					"filetype",
+					icon_only = true,
+				},
+				"branch",
+				{
+					"filename",
+					path = 0,
+					file_status = false,
+					newfile_status = false,
+					symbols = {
+						unnamed = "",
+					},
+				},
+				{
+					"codecompanion",
+					icon = "",
+					spinner_symbols = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
+					done_symbol = "󰃗",
 				},
 			},
-			sections = {},
-			tabline = {
-				lualine_a = {
-					"diff",
+			lualine_c = {},
+			lualine_x = {
+				{
+					"diagnostics",
+					sources = { "nvim_lsp" },
+					sections = { "error", "warn", "info", "hint" },
+					diagnostics_color = {
+						error = "DiagnosticError",
+						warn = "DiagnosticWarn",
+						info = "DiagnosticInfo",
+						hint = "DiagnosticHint",
+					},
+					symbols = { error = "󰬌 ", warn = "󰬞 ", info = "󰬐 ", hint = "󰬏 " },
+					colored = true,
+					update_in_insert = true,
+					always_visible = true,
 				},
-				lualine_b = {
-					{
-						"filetype",
-						icon_only = true,
-					},
-					"branch",
-					{
-						"filename",
-						path = 0,
-						file_status = false,
-						newfile_status = false,
-						symbols = {
-							unnamed = "",
-						},
-					},
-					{
+			},
+			lualine_y = {
+				{ "datetime", style = "󰄉 %Y˚%m˚%d | %H:%M:%S" },
+			},
+			lualine_z = {
+				{
+					"lsp-status",
+					show_count = false,
+					disabled_filetypes = {
+						"mason",
+						"NvimTree",
+						"TelescopePrompt",
+						"toggleterm",
 						"codecompanion",
-						icon = "",
-						spinner_symbols = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" },
-						done_symbol = "󰃗",
+						"markdown",
+						"",
 					},
-				},
-				lualine_c = {},
-				lualine_x = {
-					{
-						"diagnostics",
-						sources = { "nvim_lsp" },
-						sections = { "error", "warn", "info", "hint" },
-						diagnostics_color = {
-							error = "DiagnosticError",
-							warn = "DiagnosticWarn",
-							info = "DiagnosticInfo",
-							hint = "DiagnosticHint",
-						},
-						symbols = { error = "󰬌 ", warn = "󰬞 ", info = "󰬐 ", hint = "󰬏 " },
-						colored = true,
-						update_in_insert = true,
-						always_visible = true,
-					},
-				},
-				lualine_y = {
-					{ "datetime", style = "󰄉 %Y˚%m˚%d | %H:%M:%S" },
-				},
-				lualine_z = {
-					{
-						"lsp-status",
-						show_count = false,
-						disabled_filetypes = {
-							"mason",
-							"NvimTree",
-							"TelescopePrompt",
-							"toggleterm",
-							"codecompanion",
-							"markdown",
-							"",
-						},
-						icons = {
-							active = "󰌘",
-							inactive = "󰌙",
-						},
+					icons = {
+						active = "󰌘",
+						inactive = "󰌙",
 					},
 				},
 			},
+		},
 	},
 }
